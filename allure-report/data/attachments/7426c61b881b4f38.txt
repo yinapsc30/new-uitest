@@ -1,0 +1,23 @@
+[2023-01-31 11:26:45] | 【INFO】 | <src.case.conftest> | 实例化驱动成功！
+[2023-01-31 11:26:48] | 【INFO】 | <src.utils.elementoperator> | 打开网页：https://www.coupert.com/user/login
+[2023-01-31 11:26:48] | 【INFO】 | <src.utils.elementoperator> | --输入Email:burtontest@test.com--
+[2023-01-31 11:26:48] | 【INFO】 | <src.utils.elementoperator> | 查找"输入Email"元素，元素定位:('xpath', '//*[@id="__next"]/div/div/main/div[2]/div[2]/div/div[3]/div/div/div/div/input')
+[2023-01-31 11:26:49] | 【INFO】 | <src.utils.elementoperator> | 在"输入Email"输入"burtontest@test.com",元素定位:('xpath', '//*[@id="__next"]/div/div/main/div[2]/div[2]/div/div[3]/div/div/div/div/input')
+[2023-01-31 11:26:49] | 【INFO】 | <src.utils.elementoperator> | --输入Password:123456--
+[2023-01-31 11:26:49] | 【INFO】 | <src.utils.elementoperator> | 查找"输入Password"元素，元素定位:('xpath', '//*[@id="__next"]/div/div/main/div[2]/div[2]/div/div[4]/div/div/div/div/span/input')
+[2023-01-31 11:26:49] | 【INFO】 | <src.utils.elementoperator> | 在"输入Password"输入"123456",元素定位:('xpath', '//*[@id="__next"]/div/div/main/div[2]/div[2]/div/div[4]/div/div/div/div/span/input')
+[2023-01-31 11:26:49] | 【INFO】 | <src.utils.elementoperator> | --判断是否点击登录，页面完成跳转--
+[2023-01-31 11:26:49] | 【INFO】 | <src.utils.elementoperator> | 等待"判断是否进入个人中心"元素,定位方式:('xpath', '//*[@id="__next"]/main/div/div[1]/div[1]/div[3]/span[2]')
+[2023-01-31 11:27:03] | 【INFO】 | <src.utils.elementoperator> | 等待"判断是否进入个人中心"时长:0:00:13.732504
+[2023-01-31 11:27:10] | 【INFO】 | <src.utils.elementoperator> | 打开网页：https://www.coupert.com/user/withdraw
+[2023-01-31 11:27:10] | 【INFO】 | <src.utils.elementoperator> | --点击开始提现按钮--
+[2023-01-31 11:27:10] | 【INFO】 | <src.utils.elementoperator> | 查找"开始提现按钮"元素，元素定位:('xpath', '//*[@id="__next"]/main/div/div[2]/div/div[1]/div/div/div[2]/div[2]/div')
+[2023-01-31 11:27:10] | 【INFO】 | <src.utils.elementoperator> | 点击"开始提现按钮",元素定位:('xpath', '//*[@id="__next"]/main/div/div[2]/div/div[1]/div/div/div[2]/div[2]/div')
+[2023-01-31 11:27:11] | 【INFO】 | <src.utils.elementoperator> | --选择PayPal提现--
+[2023-01-31 11:27:11] | 【INFO】 | <src.utils.elementoperator> | 查找"PayPal提现"元素，元素定位:('xpath', '/html/body/div/main/div/div[2]/div[2]/div[2]/div/div[2]/div/div[1]/div')
+[2023-01-31 11:27:13] | 【INFO】 | <src.utils.elementoperator> | 点击"PayPal提现",元素定位:('xpath', '/html/body/div/main/div/div[2]/div[2]/div[2]/div/div[2]/div/div[1]/div')
+[2023-01-31 11:27:14] | 【INFO】 | <src.utils.elementoperator> | --判断是否已绑定paypal邮箱--
+[2023-01-31 11:27:14] | 【INFO】 | <src.utils.elementoperator> | 等待"判断是否存在Paypal账号"元素,定位方式:('xpath', '//*[@id="basic"]/div[1]/a')
+[2023-01-31 11:27:50] | 【ERROR】 | <src.utils.elementoperator> | 等待"判断是否存在Paypal账号"元素失败,定位方式:('xpath', '//*[@id="basic"]/div[1]/a')
+[2023-01-31 11:28:16] | 【INFO】 | <src.utils.elementoperator> | 截屏成功,图片路径为/Users/soar/PycharmProjects/soar_uitest/src/utils/data\screenshot\2023-01-31\等待元素[判断是否存在Paypal账号]出现异常_20230131_112750.png
+[2023-01-31 11:28:32] | 【INFO】 | <src.case.conftest> | 关闭浏览器，测试结束！

@@ -1,0 +1,6 @@
+pages:
+  - page:
+      pageName: web
+      desc: 首页
+      locators:
+        - { desc: "",type: "xpath",value: '', name: "registered" }

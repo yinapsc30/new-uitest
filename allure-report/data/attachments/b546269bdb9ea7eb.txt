@@ -1,0 +1,56 @@
+[0;32m[2023-01-31 11:26:45,071] | [0;32m【INFO】[0;32m| <src.case.conftest> [0;32m | 实例化驱动成功！
+[0;32m[2023-01-31 11:26:45,094] | [0;32m【INFO】[0;32m| <src.case.conftest> [0;32m | 测试报告:<TestReport 'src/case/test_withdraw_giftcard.py::test_withdraw_money_success' when='setup' outcome='passed'>
+[0;32m[2023-01-31 11:26:45,094] | [0;32m【INFO】[0;32m| <src.case.conftest> [0;32m | 执行耗时:19.306082339
+[0;32m[2023-01-31 11:26:48,823] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 打开网页：https://www.coupert.com/user/login
+[0;32m[2023-01-31 11:26:48,944] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | --输入Email:burtontest@test.com--
+[0;32m[2023-01-31 11:26:48,946] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 查找"输入Email"元素，元素定位:('xpath', '//*[@id="__next"]/div/div/main/div[2]/div[2]/div/div[3]/div/div/div/div/input')
+[0;32m[2023-01-31 11:26:49,357] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 在"输入Email"输入"burtontest@test.com",元素定位:('xpath', '//*[@id="__next"]/div/div/main/div[2]/div[2]/div/div[3]/div/div/div/div/input')
+[0;32m[2023-01-31 11:26:49,761] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | --输入Password:123456--
+[0;32m[2023-01-31 11:26:49,764] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 查找"输入Password"元素，元素定位:('xpath', '//*[@id="__next"]/div/div/main/div[2]/div[2]/div/div[4]/div/div/div/div/span/input')
+[0;32m[2023-01-31 11:26:49,794] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 在"输入Password"输入"123456",元素定位:('xpath', '//*[@id="__next"]/div/div/main/div[2]/div[2]/div/div[4]/div/div/div/div/span/input')
+[0;32m[2023-01-31 11:26:49,893] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | --判断是否点击登录，页面完成跳转--
+[0;32m[2023-01-31 11:26:49,895] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 等待"判断是否进入个人中心"元素,定位方式:('xpath', '//*[@id="__next"]/main/div/div[1]/div[1]/div[3]/span[2]')
+[0;32m[2023-01-31 11:27:03,631] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 等待"判断是否进入个人中心"时长:0:00:13.732504
+[0;32m[2023-01-31 11:27:10,375] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 打开网页：https://www.coupert.com/user/withdraw
+[0;32m[2023-01-31 11:27:10,377] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | --点击开始提现按钮--
+[0;32m[2023-01-31 11:27:10,378] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 查找"开始提现按钮"元素，元素定位:('xpath', '//*[@id="__next"]/main/div/div[2]/div/div[1]/div/div/div[2]/div[2]/div')
+[0;32m[2023-01-31 11:27:10,822] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 点击"开始提现按钮",元素定位:('xpath', '//*[@id="__next"]/main/div/div[2]/div/div[1]/div/div/div[2]/div[2]/div')
+[0;32m[2023-01-31 11:27:11,882] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | --选择PayPal提现--
+[0;32m[2023-01-31 11:27:11,978] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 查找"PayPal提现"元素，元素定位:('xpath', '/html/body/div/main/div/div[2]/div[2]/div[2]/div/div[2]/div/div[1]/div')
+[0;32m[2023-01-31 11:27:13,049] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 点击"PayPal提现",元素定位:('xpath', '/html/body/div/main/div/div[2]/div[2]/div[2]/div/div[2]/div/div[1]/div')
+[0;32m[2023-01-31 11:27:14,128] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | --判断是否已绑定paypal邮箱--
+[0;32m[2023-01-31 11:27:14,195] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 等待"判断是否存在Paypal账号"元素,定位方式:('xpath', '//*[@id="basic"]/div[1]/a')
+[0;31m[2023-01-31 11:27:48,719] | [0;41m【ERROR】[0;31m| <src.utils.elementoperator> [0;31m | 等待"判断是否存在Paypal账号"元素失败,定位方式:('xpath', '//*[@id="basic"]/div[1]/a')
+Traceback (most recent call last):
+  File "/Users/soar/PycharmProjects/soar_uitest/src/utils/elementoperator.py", line 37, in wait_eleVisible
+    WebDriverWait(self.driver, timeout, poll_frequency).until(EC.presence_of_element_located(loc))
+  File "/Library/Python/3.8/site-packages/selenium/webdriver/support/wait.py", line 95, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104977fa8 chromedriver + 4886440
+1   chromedriver                        0x00000001048f5643 chromedriver + 4351555
+2   chromedriver                        0x0000000104543b27 chromedriver + 477991
+3   chromedriver                        0x000000010458876c chromedriver + 759660
+4   chromedriver                        0x00000001045889c1 chromedriver + 760257
+5   chromedriver                        0x00000001045cc204 chromedriver + 1036804
+6   chromedriver                        0x00000001045ae5fd chromedriver + 914941
+7   chromedriver                        0x00000001045c95fe chromedriver + 1025534
+8   chromedriver                        0x00000001045ae3a3 chromedriver + 914339
+9   chromedriver                        0x000000010457857f chromedriver + 693631
+10  chromedriver                        0x0000000104579b1e chromedriver + 699166
+11  chromedriver                        0x0000000104944b9e chromedriver + 4676510
+12  chromedriver                        0x000000010494991e chromedriver + 4696350
+13  chromedriver                        0x000000010495119f chromedriver + 4727199
+14  chromedriver                        0x000000010494a81a chromedriver + 4700186
+15  chromedriver                        0x000000010491da62 chromedriver + 4516450
+16  chromedriver                        0x00000001049698c8 chromedriver + 4827336
+17  chromedriver                        0x0000000104969a45 chromedriver + 4827717
+18  chromedriver                        0x000000010497f7ef chromedriver + 4917231
+19  libsystem_pthread.dylib             0x00007fff73896109 _pthread_start + 148
+20  libsystem_pthread.dylib             0x00007fff73891b8b thread_start + 15
+
+[0;32m[2023-01-31 11:28:14,322] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 截屏成功,图片路径为/Users/soar/PycharmProjects/soar_uitest/src/utils/data\screenshot\2023-01-31\等待元素[判断是否存在Paypal账号]出现异常_20230131_112750.png
+[0;32m[2023-01-31 11:28:31,732] | [0;32m【INFO】[0;32m| <src.case.conftest> [0;32m | 测试报告:<TestReport 'src/case/test_withdraw_giftcard.py::test_withdraw_money_success' when='call' outcome='failed'>
+[0;32m[2023-01-31 11:28:32,304] | [0;32m【INFO】[0;32m| <src.case.conftest> [0;32m | 执行耗时:94.95132960400001
+[0;32m[2023-01-31 11:28:32,471] | [0;32m【INFO】[0;32m| <src.case.conftest> [0;32m | 关闭浏览器，测试结束！

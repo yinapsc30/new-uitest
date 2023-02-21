@@ -1,0 +1,2 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"broken","Tue Jan 31 11:26:45 CST 2023","Tue Jan 31 11:28:20 CST 2023","94949","src.case","test_withdraw_giftcard","","","","PayPal提现验证码错误",""

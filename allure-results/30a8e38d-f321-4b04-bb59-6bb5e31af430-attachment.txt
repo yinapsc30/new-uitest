@@ -1,0 +1,50 @@
+[0;32m[2023-01-31 12:00:02,425] | [0;32m【INFO】[0;32m| <src.case.conftest> [0;32m | 实例化驱动成功！
+[0;32m[2023-01-31 12:00:02,456] | [0;32m【INFO】[0;32m| <src.case.conftest> [0;32m | 测试报告:<TestReport 'src/case/test_withdraw_giftcard.py::test_withdraw_money_success' when='setup' outcome='passed'>
+[0;32m[2023-01-31 12:00:02,456] | [0;32m【INFO】[0;32m| <src.case.conftest> [0;32m | 执行耗时:6.550782169
+[0;32m[2023-01-31 12:00:04,939] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 打开网页：https://www.coupert.com/user/login
+[0;32m[2023-01-31 12:00:04,941] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | --输入Email:burtontest@test.com--
+[0;32m[2023-01-31 12:00:04,942] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 查找"输入Email"元素，元素定位:('xpath', '//*[@id="__next"]/div/div/main/div[2]/div[2]/div/div[3]/div/div/div/div/input')
+[0;32m[2023-01-31 12:00:05,514] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 在"输入Email"输入"burtontest@test.com",元素定位:('xpath', '//*[@id="__next"]/div/div/main/div[2]/div[2]/div/div[3]/div/div/div/div/input')
+[0;32m[2023-01-31 12:00:06,036] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | --输入Password:123456--
+[0;32m[2023-01-31 12:00:06,047] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 查找"输入Password"元素，元素定位:('xpath', '//*[@id="__next"]/div/div/main/div[2]/div[2]/div/div[4]/div/div/div/div/span/input')
+[0;32m[2023-01-31 12:00:06,177] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 在"输入Password"输入"123456",元素定位:('xpath', '//*[@id="__next"]/div/div/main/div[2]/div[2]/div/div[4]/div/div/div/div/span/input')
+[0;32m[2023-01-31 12:00:06,628] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | --判断是否点击登录，页面完成跳转--
+[0;32m[2023-01-31 12:00:06,693] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 等待"判断是否进入个人中心"元素,定位方式:('xpath', '//*[@id="__next"]/main/div/div[1]/div[1]/div[3]/span[2]')
+[0;32m[2023-01-31 12:00:31,864] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 等待"判断是否进入个人中心"时长:0:00:25.170025
+[0;32m[2023-01-31 12:00:37,996] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 打开网页：https://www.coupert.com/user/withdraw
+[0;32m[2023-01-31 12:00:37,998] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | --点击开始提现按钮--
+[0;32m[2023-01-31 12:00:38,000] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 查找"开始提现按钮"元素，元素定位:('xpath', '//*[@id="__next"]/main/div/div[2]/div/div[1]/div/div/div[2]/div[2]/div')
+[0;32m[2023-01-31 12:00:38,429] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 点击"开始提现按钮",元素定位:('xpath', '//*[@id="__next"]/main/div/div[2]/div/div[1]/div/div/div[2]/div[2]/div')
+[0;32m[2023-01-31 12:00:39,506] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | --选择PayPal提现--
+[0;32m[2023-01-31 12:00:39,508] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 查找"PayPal提现"元素，元素定位:('xpath', '/html/body/div/main/div/div[2]/div[2]/div[2]/div/div[2]/div/div[1]/div')
+[0;32m[2023-01-31 12:00:39,681] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 点击"PayPal提现",元素定位:('xpath', '/html/body/div/main/div/div[2]/div[2]/div[2]/div/div[2]/div/div[1]/div')
+[0;32m[2023-01-31 12:00:40,755] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | --判断是否已绑定paypal邮箱--
+[0;32m[2023-01-31 12:00:40,774] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 查找"判断是否存在Paypal账号"元素集，元素定位:('xpath', '//*[@id="basic"]/div[1]/a')
+[0;32m[2023-01-31 12:01:10,824] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 未找到"判断是否存在Paypal账号"元素
+[0;32m[2023-01-31 12:01:10,826] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 查找"输入Paypal账号"元素，元素定位:('xpath', '//*[@id="basic_email"]')
+[0;32m[2023-01-31 12:01:10,845] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 在"输入Paypal账号"输入"burtontest@test.com",元素定位:('xpath', '//*[@id="basic_email"]')
+[0;32m[2023-01-31 12:01:11,056] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | --点击PayPal账号确认单选框--
+[0;32m[2023-01-31 12:01:11,058] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 查找"确认单选框"元素，元素定位:('xpath', '//*[@id="basic"]/p[2]/input')
+[0;32m[2023-01-31 12:01:11,087] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 点击"确认单选框",元素定位:('xpath', '//*[@id="basic"]/p[2]/input')
+[0;32m[2023-01-31 12:01:11,146] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | --点击下一步，进入验证码页面--
+[0;32m[2023-01-31 12:01:11,147] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 查找"下一步"元素，元素定位:('xpath', '//*[@id="basic"]/div[2]/div/div/div/div/div/button[2]')
+[0;32m[2023-01-31 12:01:11,169] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 点击"下一步",元素定位:('xpath', '//*[@id="basic"]/div[2]/div/div/div/div/div/button[2]')
+[0;32m[2023-01-31 12:01:11,234] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | --点击发送验证码--
+[0;32m[2023-01-31 12:01:11,236] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 查找"发送验证码"元素，元素定位:('xpath', '//*[@id="__next"]/main/div/div[2]/div[2]/div[2]/div[2]/div/div[2]/div/button')
+[0;32m[2023-01-31 12:01:11,254] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 点击"发送验证码",元素定位:('xpath', '//*[@id="__next"]/main/div/div[2]/div[2]/div[2]/div[2]/div/div[2]/div/button')
+[0;32m[2023-01-31 12:01:11,315] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | --点击发送验证码--
+[0;32m[2023-01-31 12:01:11,316] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 查找"发送验证码"元素，元素定位:('xpath', '//*[@id="__next"]/main/div/div[2]/div[2]/div[2]/div[2]/div/div[2]/div/button')
+[0;32m[2023-01-31 12:01:11,336] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 点击"发送验证码",元素定位:('xpath', '//*[@id="__next"]/main/div/div[2]/div[2]/div[2]/div[2]/div/div[2]/div/button')
+[0;32m[2023-01-31 12:01:11,368] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | --输入验证码:1234--
+[0;32m[2023-01-31 12:01:11,369] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 查找"输入验证码"元素，元素定位:('xpath', '//*[@id="__next"]/main/div/div[2]/div[2]/div[2]/div[2]/div/div[2]/div/input')
+[0;32m[2023-01-31 12:01:11,388] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 在"输入验证码"输入"1234",元素定位:('xpath', '//*[@id="__next"]/main/div/div[2]/div[2]/div[2]/div[2]/div/div[2]/div/input')
+[0;32m[2023-01-31 12:01:11,480] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | --点击提现按钮--
+[0;32m[2023-01-31 12:01:11,481] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 查找"提现按钮"元素，元素定位:('xpath', '//*[@id="__next"]/main/div/div[2]/div[2]/div[2]/div[2]/div/div[3]/button[2]')
+[0;32m[2023-01-31 12:01:11,505] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 点击"提现按钮",元素定位:('xpath', '//*[@id="__next"]/main/div/div[2]/div[2]/div[2]/div[2]/div/div[3]/button[2]')
+[0;32m[2023-01-31 12:01:12,571] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 查找"错误验证码提示文案"元素，元素定位:('xpath', '//*[@id="__next"]/main/div/div[2]/div[2]/div[2]/div[2]/div/div[3]')
+[0;32m[2023-01-31 12:01:12,596] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 获取"错误验证码提示文案"元素文本内容，元素定位:('xpath', '//*[@id="__next"]/main/div/div[2]/div[2]/div[2]/div[2]/div/div[3]')
+[0;32m[2023-01-31 12:01:12,617] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | 获取"错误验证码提示文案"元素文本内容为"验证码错误。 请确保输入您收到的最新验证码。",元素定位:('xpath', '//*[@id="__next"]/main/div/div[2]/div[2]/div[2]/div[2]/div/div[3]')
+[0;32m[2023-01-31 12:01:12,619] | [0;32m【INFO】[0;32m| <src.utils.elementoperator> [0;32m | --获取错误验证码文案:验证码错误。 请确保输入您收到的最新验证码。--
+[0;32m[2023-01-31 12:01:12,762] | [0;32m【INFO】[0;32m| <src.case.conftest> [0;32m | 测试报告:<TestReport 'src/case/test_withdraw_giftcard.py::test_withdraw_money_success' when='call' outcome='failed'>
+[0;32m[2023-01-31 12:01:12,763] | [0;32m【INFO】[0;32m| <src.case.conftest> [0;32m | 执行耗时:70.16562158400001
+[0;32m[2023-01-31 12:01:12,764] | [0;32m【INFO】[0;32m| <src.case.conftest> [0;32m | 关闭浏览器，测试结束！

@@ -1,0 +1,52 @@
+[32mINFO    [0m src.case.conftest:logoperator.py:45 实例化驱动成功！
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 打开网页：https://www.coupert.com/user/login
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 --输入Email:burtontest@test.com--
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 查找"输入Email"元素，元素定位:('xpath', '//*[@id="__next"]/div/div/main/div[2]/div[2]/div/div[3]/div/div/div/div/input')
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 在"输入Email"输入"burtontest@test.com",元素定位:('xpath', '//*[@id="__next"]/div/div/main/div[2]/div[2]/div/div[3]/div/div/div/div/input')
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 --输入Password:123456--
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 查找"输入Password"元素，元素定位:('xpath', '//*[@id="__next"]/div/div/main/div[2]/div[2]/div/div[4]/div/div/div/div/span/input')
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 在"输入Password"输入"123456",元素定位:('xpath', '//*[@id="__next"]/div/div/main/div[2]/div[2]/div/div[4]/div/div/div/div/span/input')
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 --判断是否点击登录，页面完成跳转--
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 等待"判断是否进入个人中心"元素,定位方式:('xpath', '//*[@id="__next"]/main/div/div[1]/div[1]/div[3]/span[2]')
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 等待"判断是否进入个人中心"时长:0:00:13.732504
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 打开网页：https://www.coupert.com/user/withdraw
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 --点击开始提现按钮--
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 查找"开始提现按钮"元素，元素定位:('xpath', '//*[@id="__next"]/main/div/div[2]/div/div[1]/div/div/div[2]/div[2]/div')
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 点击"开始提现按钮",元素定位:('xpath', '//*[@id="__next"]/main/div/div[2]/div/div[1]/div/div/div[2]/div[2]/div')
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 --选择PayPal提现--
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 查找"PayPal提现"元素，元素定位:('xpath', '/html/body/div/main/div/div[2]/div[2]/div[2]/div/div[2]/div/div[1]/div')
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 点击"PayPal提现",元素定位:('xpath', '/html/body/div/main/div/div[2]/div[2]/div[2]/div/div[2]/div/div[1]/div')
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 --判断是否已绑定paypal邮箱--
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 等待"判断是否存在Paypal账号"元素,定位方式:('xpath', '//*[@id="basic"]/div[1]/a')
+[31m[1mERROR   [0m src.utils.elementoperator:logoperator.py:63 等待"判断是否存在Paypal账号"元素失败,定位方式:('xpath', '//*[@id="basic"]/div[1]/a')
+Traceback (most recent call last):
+  File "/Users/soar/PycharmProjects/soar_uitest/src/utils/elementoperator.py", line 37, in wait_eleVisible
+    WebDriverWait(self.driver, timeout, poll_frequency).until(EC.presence_of_element_located(loc))
+  File "/Library/Python/3.8/site-packages/selenium/webdriver/support/wait.py", line 95, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104977fa8 chromedriver + 4886440
+1   chromedriver                        0x00000001048f5643 chromedriver + 4351555
+2   chromedriver                        0x0000000104543b27 chromedriver + 477991
+3   chromedriver                        0x000000010458876c chromedriver + 759660
+4   chromedriver                        0x00000001045889c1 chromedriver + 760257
+5   chromedriver                        0x00000001045cc204 chromedriver + 1036804
+6   chromedriver                        0x00000001045ae5fd chromedriver + 914941
+7   chromedriver                        0x00000001045c95fe chromedriver + 1025534
+8   chromedriver                        0x00000001045ae3a3 chromedriver + 914339
+9   chromedriver                        0x000000010457857f chromedriver + 693631
+10  chromedriver                        0x0000000104579b1e chromedriver + 699166
+11  chromedriver                        0x0000000104944b9e chromedriver + 4676510
+12  chromedriver                        0x000000010494991e chromedriver + 4696350
+13  chromedriver                        0x000000010495119f chromedriver + 4727199
+14  chromedriver                        0x000000010494a81a chromedriver + 4700186
+15  chromedriver                        0x000000010491da62 chromedriver + 4516450
+16  chromedriver                        0x00000001049698c8 chromedriver + 4827336
+17  chromedriver                        0x0000000104969a45 chromedriver + 4827717
+18  chromedriver                        0x000000010497f7ef chromedriver + 4917231
+19  libsystem_pthread.dylib             0x00007fff73896109 _pthread_start + 148
+20  libsystem_pthread.dylib             0x00007fff73891b8b thread_start + 15
+
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 截屏成功,图片路径为/Users/soar/PycharmProjects/soar_uitest/src/utils/data\screenshot\2023-01-31\等待元素[判断是否存在Paypal账号]出现异常_20230131_112750.png
+[32mINFO    [0m src.case.conftest:logoperator.py:45 关闭浏览器，测试结束！

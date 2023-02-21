@@ -1,0 +1,46 @@
+[32mINFO    [0m src.case.conftest:logoperator.py:45 实例化驱动成功！
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 打开网页：https://www.coupert.com/user/login
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 --输入Email:burtontest@test.com--
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 查找"输入Email"元素，元素定位:('xpath', '//*[@id="__next"]/div/div/main/div[2]/div[2]/div/div[3]/div/div/div/div/input')
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 在"输入Email"输入"burtontest@test.com",元素定位:('xpath', '//*[@id="__next"]/div/div/main/div[2]/div[2]/div/div[3]/div/div/div/div/input')
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 --输入Password:123456--
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 查找"输入Password"元素，元素定位:('xpath', '//*[@id="__next"]/div/div/main/div[2]/div[2]/div/div[4]/div/div/div/div/span/input')
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 在"输入Password"输入"123456",元素定位:('xpath', '//*[@id="__next"]/div/div/main/div[2]/div[2]/div/div[4]/div/div/div/div/span/input')
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 --判断是否点击登录，页面完成跳转--
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 等待"判断是否进入个人中心"元素,定位方式:('xpath', '//*[@id="__next"]/main/div/div[1]/div[1]/div[3]/span[2]')
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 等待"判断是否进入个人中心"时长:0:00:25.170025
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 打开网页：https://www.coupert.com/user/withdraw
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 --点击开始提现按钮--
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 查找"开始提现按钮"元素，元素定位:('xpath', '//*[@id="__next"]/main/div/div[2]/div/div[1]/div/div/div[2]/div[2]/div')
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 点击"开始提现按钮",元素定位:('xpath', '//*[@id="__next"]/main/div/div[2]/div/div[1]/div/div/div[2]/div[2]/div')
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 --选择PayPal提现--
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 查找"PayPal提现"元素，元素定位:('xpath', '/html/body/div/main/div/div[2]/div[2]/div[2]/div/div[2]/div/div[1]/div')
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 点击"PayPal提现",元素定位:('xpath', '/html/body/div/main/div/div[2]/div[2]/div[2]/div/div[2]/div/div[1]/div')
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 --判断是否已绑定paypal邮箱--
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 查找"判断是否存在Paypal账号"元素集，元素定位:('xpath', '//*[@id="basic"]/div[1]/a')
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 未找到"判断是否存在Paypal账号"元素
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 查找"输入Paypal账号"元素，元素定位:('xpath', '//*[@id="basic_email"]')
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 在"输入Paypal账号"输入"burtontest@test.com",元素定位:('xpath', '//*[@id="basic_email"]')
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 --点击PayPal账号确认单选框--
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 查找"确认单选框"元素，元素定位:('xpath', '//*[@id="basic"]/p[2]/input')
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 点击"确认单选框",元素定位:('xpath', '//*[@id="basic"]/p[2]/input')
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 --点击下一步，进入验证码页面--
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 查找"下一步"元素，元素定位:('xpath', '//*[@id="basic"]/div[2]/div/div/div/div/div/button[2]')
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 点击"下一步",元素定位:('xpath', '//*[@id="basic"]/div[2]/div/div/div/div/div/button[2]')
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 --点击发送验证码--
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 查找"发送验证码"元素，元素定位:('xpath', '//*[@id="__next"]/main/div/div[2]/div[2]/div[2]/div[2]/div/div[2]/div/button')
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 点击"发送验证码",元素定位:('xpath', '//*[@id="__next"]/main/div/div[2]/div[2]/div[2]/div[2]/div/div[2]/div/button')
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 --点击发送验证码--
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 查找"发送验证码"元素，元素定位:('xpath', '//*[@id="__next"]/main/div/div[2]/div[2]/div[2]/div[2]/div/div[2]/div/button')
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 点击"发送验证码",元素定位:('xpath', '//*[@id="__next"]/main/div/div[2]/div[2]/div[2]/div[2]/div/div[2]/div/button')
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 --输入验证码:1234--
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 查找"输入验证码"元素，元素定位:('xpath', '//*[@id="__next"]/main/div/div[2]/div[2]/div[2]/div[2]/div/div[2]/div/input')
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 在"输入验证码"输入"1234",元素定位:('xpath', '//*[@id="__next"]/main/div/div[2]/div[2]/div[2]/div[2]/div/div[2]/div/input')
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 --点击提现按钮--
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 查找"提现按钮"元素，元素定位:('xpath', '//*[@id="__next"]/main/div/div[2]/div[2]/div[2]/div[2]/div/div[3]/button[2]')
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 点击"提现按钮",元素定位:('xpath', '//*[@id="__next"]/main/div/div[2]/div[2]/div[2]/div[2]/div/div[3]/button[2]')
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 查找"错误验证码提示文案"元素，元素定位:('xpath', '//*[@id="__next"]/main/div/div[2]/div[2]/div[2]/div[2]/div/div[3]')
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 获取"错误验证码提示文案"元素文本内容，元素定位:('xpath', '//*[@id="__next"]/main/div/div[2]/div[2]/div[2]/div[2]/div/div[3]')
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 获取"错误验证码提示文案"元素文本内容为"验证码错误。 请确保输入您收到的最新验证码。",元素定位:('xpath', '//*[@id="__next"]/main/div/div[2]/div[2]/div[2]/div[2]/div/div[3]')
+[32mINFO    [0m src.utils.elementoperator:logoperator.py:45 --获取错误验证码文案:验证码错误。 请确保输入您收到的最新验证码。--
+[32mINFO    [0m src.case.conftest:logoperator.py:45 关闭浏览器，测试结束！

@@ -1,3 +1,4 @@
+from src.utils.constant import BASE_PATH
 from src.utils.logoperator import LogOperator
 import logging
 import os
@@ -269,9 +270,9 @@ class BasePage(object):
         # filepath = 指图片保存目录/model(页面功能名称)_当前时间到秒.png
         # 截图保存目录
         # 拼接日志文件夹，如果不存在则自动创建
-        cur_path = os.path.dirname(os.path.realpath(__file__))
+        base_path = BASE_PATH
         now_date = time.strftime('%Y-%m-%d', time.localtime(time.time()))
-        screenshot_path = os.path.join(cur_path, f'data\\screenshot\\{now_date}')
+        screenshot_path = os.path.join(base_path, f'/data/screenshot/{now_date}')
         if not os.path.exists(screenshot_path):
             os.mkdir(screenshot_path)
         # 当前时间
@@ -358,3 +359,19 @@ class BasePage(object):
         """
         self.driver.execute_script("arguments[0].setAttribute('style',arguments[1]);",
                                    element, "border:2px solid red;")
+
+    def scroll_page_to_element_visible(self, loc, model=None):
+        """
+        滚动页面至元素可见
+        :return:
+        """
+        # 先查找元素
+        ele = self.find_element(loc, model)
+        try:
+            self.logger.info(f'滑动屏幕到"{model}"元素可见，元素定位:{loc}')
+            self.driver.execute_script("arguments[0].scrollIntoView();", ele)
+        except:
+            self.logger.exception(f'滑动屏幕到"{model}"元素可见，元素定位:{loc}')
+            # 截图
+            self.save_webImgs(f'滑动屏幕到"{model}"元素异常')
+            raise

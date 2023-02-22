@@ -282,7 +282,6 @@ class BasePage(object):
         except Exception as e:
             self.logger.exception(f"关闭窗口失败，异常信息：{e}")
 
-
     def get_current_handle(self):
         """获取当前页面的handle"""
         try:

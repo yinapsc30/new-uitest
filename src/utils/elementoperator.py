@@ -60,6 +60,7 @@ class BasePage(object):
             WebDriverWait(self.driver, timeout, poll_frequency).until(loc.is_enabled())
             end = datetime.now()
             self.logger.info(f'等待"{model}"时长:{end - start}')
+            return True
         except TimeoutException:
             self.logger.exception(f'判断"{model}"元素失败,定位方式:{loc}')
             # 截图
@@ -245,25 +246,40 @@ class BasePage(object):
         try:
             if name == 'new':
                 if cur_handles is not None:
-                    self.logger.info('切换到最新打开的窗口')
+                    self.logger.info("切换到最新打开的窗口")
                     WebDriverWait(self.driver, timeout, poll_frequency).until(EC.new_window_is_opened(cur_handles))
                     window_handles = self.driver.window_handles
-                    self.driver.swich_to.window(window_handles[-1])
+                    self.driver.switch_to.window(window_handles[-1])
                 else:
-                    self.logger.exception('切换失败,没有要切换窗口的信息!!!')
+                    self.logger.exception("切换失败,没有要切换窗口的信息!!!")
                     self.save_webImgs("切换失败_没有要切换窗口的信息")
                     raise
-            elif name == 'default':
-                self.logger.info('切换到默认页面')
-                self.driver.switch_to.default()
             else:
-                self.logger.info('切换到为 handles 的窗口')
+                self.logger.info("切换到为 handles 的窗口")
                 self.driver.swich_to.window(name)
         except:
-            self.logger.exception('切换窗口失败!!!')
+            self.logger.exception("切换窗口失败!!!")
             # 截图
             self.save_webImgs("切换失败_没有要切换窗口的信息")
             raise
+
+    def get_current_handle(self):
+        """获取当前页面的handle"""
+        try:
+            current_handle = self.driver.current_window
+            self.logger.info(f"获取当前页面handle:{current_handle}")
+            return current_handle
+        except Exception as e:
+            self.logger.info(f"获取当前页面handle失败，异常信息:{e}")
+
+    def get_current_link(self):
+        """获取当前页面的link"""
+        try:
+            current_link = self.driver.current_url
+            self.logger.info(f"获取当前页面link:{current_link}")
+            return current_link
+        except Exception as e:
+            self.logger.info(f"获取当前页面link失败，异常信息:{e}")
 
     # 截图
     def save_webImgs(self, model=None):
@@ -301,6 +317,24 @@ class BasePage(object):
             self.logger.info("打开网页：%s" % url)
         except TimeoutException:
             raise TimeoutException("打开%s超时请检查网络或网址服务器" % url)
+
+    def back_to(self):
+        """返回前一页"""
+        try:
+            self.driver.back()
+            self.driver.implicitly_wait(10)
+            self.logger.info("执行返回操作，返回上一页")
+        except Exception as e:
+            self.logger.info(f"返回操作失败，异常信息:{e}")
+
+    def close_page(self):
+        """返回前一页"""
+        try:
+            self.driver.close()
+            self.driver.implicitly_wait(10)
+            self.logger.info("关闭当前页面")
+        except Exception as e:
+            self.logger.info(f"关闭当前页面，异常信息:{e}")
 
     def get_cookies(self):
         """获取当前页面所有的cookie"""

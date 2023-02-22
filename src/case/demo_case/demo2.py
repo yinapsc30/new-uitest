@@ -178,11 +178,47 @@ class smoking_test(unittest.TestCase):
         driver.find_element(By.XPATH, check).click()
         driver.find_element(By.XPATH, next_button).click()
 
+    def test_account(self):
+        driver = self.driver
 
+        driver.find_element(By.XPATH, '//*[@id="__next"]/main/div/div[2]/div/div[1]/div/div/div[3]/a').click()
+        current = driver.current_window_handle
+        print("current1：", current)
+        window_handles = driver.window_handles
+        driver.switch_to.window(window_handles[-1])
+        link = driver.current_url
+        print("link：", link)
+        text = driver.find_element(By.XPATH, '//*[@id="post-379"]/footer[1]/h1').text
+        print("text:", text)
+        time.sleep(3)
+        driver.close()
+        driver.switch_to.window(current)
+        current = driver.current_window_handle
+        print("current2:", current)
 
+        balance = driver.find_element(By.XPATH, '//*[@id="__next"]/main/div/div[2]/div/div[1]/div/div/div[2]/div[1]/span').text
+        print("balance:", balance)
+        driver.find_element(By.XPATH, '//*[@id="__next"]/main/div/div[2]/div/div[1]/div/div/div[3]/i').click()
+        text = driver.find_element(By.XPATH, '//*[@id="__next"]/main/div/div[2]/div/div[1]/div/div/div[4]/div/div/div/div/div/table/tbody/tr[1]/td[3]').text
+        print("text:", text)
 
+        assert balance == text  # pass
 
+        ele = driver.find_element(By.XPATH, '//*[@id="__next"]/main/div/div[2]/div/div[2]/div[1]')
+        # ele = driver.find_element(By.XPATH, '//*[@id="__next"]/main/div/div[2]/div/div[4]/div[1]')
+        driver.execute_script("arguments[0].scrollIntoView();", ele)
+        text = ele.text
+        print("text:", text)
 
+        eles = driver.find_elements(By.XPATH, '//*[@id="__next"]/main/div/div[2]/div/div[2]/div[2]')
+        # for i in eles:
+        #     text = i.text
+        #     print("text:", text.split('\n'))
+        b = len([i.text.split('\n') for i in eles][0])
+        assert len([i for i in eles]) // 3 == 0
+
+        # text = driver.find_element(By.XPATH, '//*[@id="__next"]/main/div/div[2]/div/div[2]/div[2]/a[1]').text
+        # print("text:", text.split('\n'))
 
     def test_baidu(self):
         driver = self.driver

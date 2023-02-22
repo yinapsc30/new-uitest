@@ -18,6 +18,8 @@ class LoginPageOperation(BasePage):
     def visible_account_email(self):
         self.logger.info("--判断是否点击登录，页面完成跳转--")
         try:
-            self.wait_eleVisible(LoginElement.ACCOUNT_EMAIL, model='判断是否进入个人中心')
+            flag = self.wait_eleVisible(LoginElement.ACCOUNT_EMAIL, model='判断是否进入个人中心')
+            if flag:
+                self.click_element(LoginElement.BALANCE_ACCOUNT, model='从首页进入个人中心')
         except:
             raise

@@ -263,6 +263,26 @@ class BasePage(object):
             self.save_webImgs("切换失败_没有要切换窗口的信息")
             raise
 
+    def close_other_window(self, current_handle):
+        """关闭除当前窗口外的所有窗口"""
+        try:
+            window_handles = self.driver.window_handles
+            self.logger.exception("关闭除当前窗口外的所有窗口")
+            for handle in window_handles:
+                if handle == current_handle:
+                    pass
+                else:
+                    try:
+                        self.driver.switch_to.window(handle)
+                        self.logger.exception(f"关闭窗口：{handle}")
+                        self.driver.close()
+                    except Exception as e:
+                        self.logger.exception(f"关闭失败，失败窗口：{handle}，异常信息：{e}")
+            self.driver.switch_to.window(current_handle)
+        except Exception as e:
+            self.logger.exception(f"关闭窗口失败，异常信息：{e}")
+
+
     def get_current_handle(self):
         """获取当前页面的handle"""
         try:

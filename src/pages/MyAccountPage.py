@@ -70,15 +70,15 @@ class MyAccountPageOperation(BasePage):
     '--------------------------------Recommended Stores--------------------------------'
 
     def move_to_recommended_title(self):
-        self.logger.info("滑动页面到recommended模块，并获取title")
-        self.scroll_page_to_element_visible(MyAccountElement.RECOMMENDED, model="recommended模块")
+        self.logger.info("滑动页面到Recommended模块，并获取title")
+        self.scroll_page_to_element_visible(MyAccountElement.RECOMMENDED, model="Recommended模块")
         text = self.get_text(MyAccountElement.RECOMMENDED, model="recommended模块title")
         return text
 
     def check_cb_not_null(self):
-        self.logger.info("查看recommended商家的cb rate是否正常")
-        eles = self.find_elements(MyAccountElement.RECOMMENDED_STORES, model="recommended stores")
-        res = len([i.text.split('\n') for i in eles][0])
+        self.logger.info("查看Recommended商家的cb rate是否正常")
+        eles = self.find_elements(MyAccountElement.RECOMMENDED_STORES, model="Recommended Stores")
+        res = [i.text.split('\n') for i in eles][0]
         return res
 
     '--------------------------------My Cash Back Activation Record--------------------------------'
@@ -103,12 +103,15 @@ class MyAccountPageOperation(BasePage):
 
     def move_to_exclusive_offers_title(self):
         self.logger.info("滑动页面到Exclusive Offers模块，并获取title")
-        self.scroll_page_to_element_visible(MyAccountElement.EXCLUSIVE_OFFERS, model="Exclusive Offers模块")
-        text = self.get_text(MyAccountElement.EXCLUSIVE_OFFERS, model="Exclusive Offers模块title")
+        self.scroll_page_to_element_visible(MyAccountElement.EXCLUSIVE, model="Exclusive Offers模块")
+        text = self.get_text(MyAccountElement.EXCLUSIVE, model="Exclusive Offers模块title")
         return text
 
-    def check_rage_success(self):
-        pass
+    def check_offers_status(self):
+        self.logger.info("查看Exclusive Offers模块的offers是否正常")
+        eles = self.find_elements(MyAccountElement.EXCLUSIVE_OFFERS, model="Exclusive Offers")
+        res = [i.text.split('\n') for i in eles][0]
+        return res
 
-    def check_shop_now(self):
+    def click_shop_now(self):
         pass

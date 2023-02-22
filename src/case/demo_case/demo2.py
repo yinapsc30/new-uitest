@@ -215,7 +215,15 @@ class smoking_test(unittest.TestCase):
         #     text = i.text
         #     print("text:", text.split('\n'))
         b = len([i.text.split('\n') for i in eles][0])
-        assert len([i for i in eles]) // 3 == 0
+        assert len([i for i in eles]) % 3 == 0
+
+        eles =driver.find_elements(By.XPATH, '//*[@id="__next"]/main/div/div[2]/div/div[4]/ul')
+        # for el in eles:
+        #     text = el.text
+        #     print("text:", text.split('\n'))
+        b = [i.text.split('\n') for i in eles][0]
+        assert "undefined" not in b
+        assert len(b) % 4 == 0
 
         # text = driver.find_element(By.XPATH, '//*[@id="__next"]/main/div/div[2]/div/div[2]/div[2]/a[1]').text
         # print("text:", text.split('\n'))

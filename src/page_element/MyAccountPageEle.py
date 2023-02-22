@@ -38,7 +38,8 @@ class MyAccountElement:
 
     """--------------------------------Exclusive Offers--------------------------------"""
 
-    EXCLUSIVE_OFFERS = (By.XPATH, '//*[@id="__next"]/main/div/div[2]/div/div[4]/div[1]')
+    EXCLUSIVE = (By.XPATH, '//*[@id="__next"]/main/div/div[2]/div/div[4]/div[1]')
+    EXCLUSIVE_OFFERS = (By.XPATH, '//*[@id="__next"]/main/div/div[2]/div/div[4]/ul')
     COPY_CODE_BUTTON = (By.CLASS_NAME, 'account_store_btn_copy__kS7p4')
     RATE_SUCCESS = (By.XPATH, '//*[@id="__next"]/main/div/div[2]/div/div[4]/ul/li[1]/div[2]/div/span')
     # SHOP_NOW = (By.CLASS_NAME, 'account_Link_color__CfmT6')

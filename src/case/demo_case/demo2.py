@@ -7,7 +7,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 # from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.firefox.options import Options
-from selenium.webdriver import ActionChains
+from selenium.webdriver import ActionChains, Keys
 from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
@@ -227,6 +227,29 @@ class smoking_test(unittest.TestCase):
 
         # text = driver.find_element(By.XPATH, '//*[@id="__next"]/main/div/div[2]/div/div[2]/div[2]/a[1]').text
         # print("text:", text.split('\n'))
+
+    def test_gold_detail(self):
+        driver = self.driver
+        # detail = driver.find_element(By.XPATH, '//*[@id="rc-tabs-7-panel-gold_order"]/div[2]/div[2]/div/div/div/div/div/table/tbody/tr[2]/td[8]/div/button')
+        detail = driver.find_element(By.XPATH, '/html/body/div[1]/main/div/div[2]/div[2]/div/div[2]/div/div/div[2]/div[2]/div/div/div/div/div/table/tbody/tr[2]/td[8]/div/button')
+        detail.click()
+        time.sleep(1)
+        text = driver.find_element(By.XPATH, "//div[@class='jsx-2717541934 rewards_operation_tips__z25vw']").text
+        print(text)
+        assert text == '* Only show data for the last 6 months.'
+        # assert text == 'UpdateTime'
+
+        ele = driver.find_element(By.XPATH, "//div[@id='__id_div_gold_search']/div[1]/div[1]/div/div/div[2]/div/div/div/div/span[1]/input")
+        ele.send_keys('shein.com')
+        ele.send_keys(Keys.ENTER)
+        time.sleep(1)
+        # action = ActionChains(driver)
+        # action.move_to_element(driver.find_element(By.XPATH, '//*[@id="__id_div_gold_search"]/div[2]/div/div/div/div[2]/div[1]/div/div/div[1]/div')).click()
+        driver.find_element(By.XPATH, "//div[contains(text(),'Query')]").click()
+        time.sleep(1)
+        domain = driver.find_element(By.XPATH, '/html/body/div[1]/main/div/div[2]/div[2]/div/div[2]/div/div/div[2]/div[2]/div/div/div/div/div/table/tbody/tr[2]/td[2]').text
+        assert domain == 'shein.com'
+
 
     def test_baidu(self):
         driver = self.driver

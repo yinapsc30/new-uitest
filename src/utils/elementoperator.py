@@ -23,6 +23,9 @@ class BasePage(object):
         self.logger = LogOperator(__name__)
         self.driver = driver
 
+    def implicitly_wait_second(self, sec):
+        self.driver.implicitly_wait(sec)
+
     # 等待元素可见
     def wait_eleVisible(self, loc, model=None, timeout=30, poll_frequency=0.5):
         """
@@ -42,7 +45,7 @@ class BasePage(object):
         except TimeoutException:
             self.logger.exception(f'等待"{model}"元素失败,定位方式:{loc}')
             # 截图
-            self.save_webImgs(f"等待元素[{model}]出现异常")
+            self.screenshot_img(f"等待元素[{model}]出现异常")
             raise
 
     # 判断元素可点击
@@ -64,7 +67,7 @@ class BasePage(object):
         except TimeoutException:
             self.logger.exception(f'判断"{model}"元素失败,定位方式:{loc}')
             # 截图
-            self.save_webImgs(f"判断元素[{model}]出现异常")
+            self.screenshot_img(f"判断元素[{model}]出现异常")
             raise
 
     # 等待元素不可见
@@ -86,7 +89,7 @@ class BasePage(object):
         except TimeoutException:
             self.logger.exception(f'等待"{model}"元素失败,定位方式:{loc}')
             # 截图
-            self.save_webImgs(f"等待元素[{model}]消失异常")
+            self.screenshot_img(f"等待元素[{model}]消失异常")
             raise
 
     # 查找一个元素element
@@ -98,7 +101,7 @@ class BasePage(object):
         except NoSuchElementException:
             self.logger.exception(f'查找"{model}"元素失败,定位方式:{loc}')
             # 截图
-            self.save_webImgs(f"查找元素[{model}]异常")
+            self.screenshot_img(f"查找元素[{model}]异常")
             raise
 
     # 查找元素elements
@@ -109,7 +112,7 @@ class BasePage(object):
         except NoSuchElementException:
             self.logger.exception(f'查找"{model}"元素集失败,定位方式:{loc}')
             # 截图
-            self.save_webImgs(f"查找元素集[{model}]异常")
+            self.screenshot_img(f"查找元素集[{model}]异常")
             raise
 
     # 查看元素是否存在
@@ -140,11 +143,25 @@ class BasePage(object):
         except:
             self.logger.exception(f'"{model}"输入操作失败!')
             # 截图
-            self.save_webImgs(f"[{model}]输入异常")
+            self.screenshot_img(f"[{model}]输入异常")
+            raise
+
+    # 上传操作
+    def upload_file(self, loc, path, model=None):
+        # 查找元素
+        ele = self.find_element(loc, model)
+        # 输入操作
+        self.logger.info(f'在"{model}"上传文件："{path}",元素定位:{loc}')
+        try:
+            ele.send_keys(path)
+        except:
+            self.logger.exception(f'"{model}上传操作失败!')
+            # 截图
+            self.screenshot_img(f"[{model}]操作异常")
             raise
 
     # 清除操作
-    def clean_inputText(self, loc, model=None):
+    def clean_input_text(self, loc, model=None):
         ele = self.find_element(loc, model)
         # 清除操作
         self.logger.info(f'清除"{model}",元素定位:{loc}')
@@ -153,7 +170,7 @@ class BasePage(object):
         except:
             self.logger.exception(f'"{model}"清除操作失败')
             # 截图
-            self.save_webImgs(f"[{model}]清除异常")
+            self.screenshot_img(f"[{model}]清除异常")
             raise
 
     # 点击操作
@@ -167,7 +184,7 @@ class BasePage(object):
         except:
             self.logger.exception(f'"{model}"点击失败')
             # 截图
-            self.save_webImgs(f"[{model}]点击异常")
+            self.screenshot_img(f"[{model}]点击异常")
             raise
 
     # js点击操作
@@ -179,7 +196,7 @@ class BasePage(object):
             self.driver.execute_script("(arguments[0]).click()", ele)
         except:
             self.logger.exception(f"向{loc}元素点击失败")
-            self.save_webImgs(model)
+            self.screenshot_img(model)
             raise
         else:
             self.logger.info(f"向{loc}元素点击成功")
@@ -197,7 +214,7 @@ class BasePage(object):
         except:
             self.logger.exception(f'获取"{model}"元素文本内容失败,元素定位:{loc}')
             # 截图
-            self.save_webImgs(f"获取[{model}]文本内容异常")
+            self.screenshot_img(f"获取[{model}]文本内容异常")
             raise
 
     # 获取属性值
@@ -213,7 +230,7 @@ class BasePage(object):
         except:
             self.logger.exception(f'获取"{model}"元素"{name}"属性失败,元素定位:{loc}')
             # 截图
-            self.save_webImgs(f"获取[{model}]属性异常")
+            self.screenshot_img(f"获取[{model}]属性异常")
             raise
 
     # iframe 切换
@@ -229,7 +246,7 @@ class BasePage(object):
         except:
             self.logger.exception('iframe 切换失败!!!')
             # 截图
-            self.save_webImgs(f"iframe切换异常")
+            self.screenshot_img(f"iframe切换异常")
             raise
 
     # 窗口切换 = 如果是切换到新窗口,new. 如果是回到默认的窗口,default
@@ -252,7 +269,7 @@ class BasePage(object):
                     self.driver.switch_to.window(window_handles[-1])
                 else:
                     self.logger.exception("切换失败,没有要切换窗口的信息!!!")
-                    self.save_webImgs("切换失败_没有要切换窗口的信息")
+                    self.screenshot_img("切换失败_没有要切换窗口的信息")
                     raise
             else:
                 self.logger.info("切换到为 handles 的窗口")
@@ -260,7 +277,7 @@ class BasePage(object):
         except:
             self.logger.exception("切换窗口失败!!!")
             # 截图
-            self.save_webImgs("切换失败_没有要切换窗口的信息")
+            self.screenshot_img("切换失败_没有要切换窗口的信息")
             raise
 
     def close_other_window(self, current_handle):
@@ -301,7 +318,7 @@ class BasePage(object):
             self.logger.info(f"获取当前页面link失败，异常信息:{e}")
 
     # 截图
-    def save_webImgs(self, model=None):
+    def screenshot_img(self, model=None):
         # filepath = 指图片保存目录/model(页面功能名称)_当前时间到秒.png
         # 截图保存目录
         # 拼接日志文件夹，如果不存在则自动创建
@@ -379,7 +396,7 @@ class BasePage(object):
         except:
             self.logger.exception(f'移动鼠标到"{model}"元素失败,元素定位:{loc}')
             # 截图
-            self.save_webImgs(f'移动鼠标到"{model}"元素异常')
+            self.screenshot_img(f'移动鼠标到"{model}"元素异常')
             raise
 
     def _get_element(self, loc, model=None, time_out=10):
@@ -426,5 +443,5 @@ class BasePage(object):
         except:
             self.logger.exception(f'滑动屏幕到"{model}"元素可见，元素定位:{loc}')
             # 截图
-            self.save_webImgs(f'滑动屏幕到"{model}"元素异常')
+            self.screenshot_img(f'滑动屏幕到"{model}"元素异常')
             raise

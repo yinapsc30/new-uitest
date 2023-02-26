@@ -12,6 +12,10 @@ class GoldOrderDetailPageOperation(BasePage):
     def open_url(self, url):
         self.get_url(url)
 
+    def get_current_url(self):
+        url = self.get_current_link()
+        return url
+
     '------------------------------Gold & Rewards----------------------------------'
 
     def check_gold_rewards_title(self):
@@ -90,7 +94,7 @@ class GoldOrderDetailPageOperation(BasePage):
         text = self.get_text(GoldOrderDetailElement.APPEAL_LIST, model="Appeal List模块title")
         return text
 
-    def select_domain(self):
+    def select_domain(self, domain):
         pass
 
     def click_appeal_query(self):
@@ -99,6 +103,6 @@ class GoldOrderDetailPageOperation(BasePage):
         self.implicitly_wait_second(3)
 
     def check_appeal_query_result(self):
-        self.logger.info('')
+        self.logger.info('验证查询结果是否正确')
         text = self.get_text(GoldOrderDetailElement.DOMAIN_TEXT, model='domain')
         return text

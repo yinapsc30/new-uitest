@@ -27,16 +27,16 @@ class GoldOrderDetailPageOperation(BasePage):
 
     def check_cash_back_gold(self):
         self.logger.info("--检查cash back gold--")
-        cb = self.get_text(GoldOrderDetailElement.CASH_BACK_GOLD, model="Cash Back Gold")
-        confirmed = self.get_text(GoldOrderDetailElement.CONFIRMED_GOLD, model="Cash Back Confirmed gold")
-        pending = self.get_text(GoldOrderDetailElement.PENDING_GOLD, model="Cash Back Pending gold")
+        cb = int(self.get_text(GoldOrderDetailElement.CASH_BACK_GOLD, model="Cash Back Gold"))
+        confirmed = int(self.get_text(GoldOrderDetailElement.CONFIRMED_GOLD, model="Cash Back Confirmed gold"))
+        pending = int(self.get_text(GoldOrderDetailElement.PENDING_GOLD, model="Cash Back Pending gold"))
         return cb, confirmed, pending
 
     def check_task_gold(self):
         self.logger.info("--检查task gold--")
-        task = self.get_text(GoldOrderDetailElement.TASK_GOLD, model="Task Gold")
-        confirmed = self.get_text(GoldOrderDetailElement.CONFIRMED_TASK_GOLD, model="Task Confirmed gold")
-        pending = self.get_text(GoldOrderDetailElement.PENDING_TASK_GOLD, model="Task Pending gold")
+        task = int(self.get_text(GoldOrderDetailElement.TASK_GOLD, model="Task Gold"))
+        confirmed = int(self.get_text(GoldOrderDetailElement.CONFIRMED_TASK_GOLD, model="Task Confirmed gold"))
+        pending = int(self.get_text(GoldOrderDetailElement.PENDING_TASK_GOLD, model="Task Pending gold"))
         return task, confirmed, pending
 
     '--------------------------------Gold Detail--------------------------------'
@@ -61,11 +61,7 @@ class GoldOrderDetailPageOperation(BasePage):
         ele = self.find_element(GoldOrderDetailElement.MERCHANT_INPUT)
         ele.send_keys(merchant)
         ele.send_keys(Keys.ENTER)
-        time.sleep(1)
-        self.click_element(GoldOrderDetailElement.DETAIL_QUERY_BUTTON)
-        time.sleep(1)
-        domain = self.get_text(GoldOrderDetailElement.MERCHANT_TEXT)
-        return domain
+        time.sleep(2)
 
     def click_detail_query(self):
         self.logger.info("点击query按钮")
@@ -74,8 +70,8 @@ class GoldOrderDetailPageOperation(BasePage):
 
     def check_query_result(self):
         self.logger.info('查询结果中的domain')
-        res = self.get_text(GoldOrderDetailElement.MERCHANT_TEXT, model="查询结果domain")
-        return res
+        domain = self.get_text(GoldOrderDetailElement.MERCHANT_TEXT, model="查询结果domain")
+        return domain
 
     def click_detail_button(self):
         self.logger.info('点击detail按钮')

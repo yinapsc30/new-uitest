@@ -279,6 +279,38 @@ class smoking_test(unittest.TestCase):
         back_button = '//*[@id="basic"]/div[2]/div/div/div/div/div/button[1]'
         driver.find_element(By.XPATH, back_button).click()
 
+    def test_missing_cash_back(self):
+        driver = self.driver
+
+        MCB_TITLE = driver.find_element(By.XPATH, '/html/body/div[1]/main/div/div[2]/div/div[1]').text
+        print("MCB_TITLE:", MCB_TITLE)
+        MCB_NOTICE = driver.find_element(By.XPATH, '/html/body/div[1]/main/div/div[2]/div/div[2]/span').text
+        print("MCB_NOTICE:", MCB_NOTICE)
+
+        stores = driver.find_element(By.XPATH, '//*[@id="domain"]')
+        stores.send_keys('shein.com')
+        stores.send_keys(Keys.ENTER)
+        # time.sleep(1)
+
+        date_picker = driver.find_element(By.XPATH, '//*[@id="orderTime"]')
+        driver.execute_script("arguments[0].value='2023-02-27';", date_picker)
+
+        driver.find_element(By.XPATH, '//*[@id="__mcb_wrap"]/form/div[3]/div/div[2]/div/div/input').send_keys('123')
+
+        driver.find_element(By.XPATH, '//*[@id="subtotal"]').send_keys('10')
+
+        driver.find_element(By.XPATH, '//*[@id="photoNames"]').send_keys('/Users/soar/PycharmProjects/DemoProject1/coupert.png')
+        time.sleep(5)
+
+        driver.find_element(By.XPATH, '//*[@id="comment"]').send_keys('000')
+
+        ele = driver.find_element(By.XPATH, '//*[@id="__mcb_wrap"]/div[1]/div/div/div/div/button')
+        driver.execute_script("arguments[0].scrollIntoView();", ele)
+        text = driver.find_element(By.XPATH, '//*[@id="__mcb_wrap"]/div[1]/div/div/div/div/button/span').text
+        print("MCB_BUTTON_TEXT:", text)
+
+        ele.click()
+
     def tearDown(self):
         driver = self.driver
         driver.quit()

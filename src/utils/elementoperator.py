@@ -10,6 +10,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.common.exceptions import TimeoutException, NoSuchElementException, WebDriverException
 from selenium.webdriver import ActionChains as AC
+
+from src.utils.sqloperator import execute_sql
 from src.utils.timeoperator import TimeOperator
 
 """
@@ -440,8 +442,47 @@ class BasePage(object):
         try:
             self.logger.info(f'滑动屏幕到"{model}"元素可见，元素定位:{loc}')
             self.driver.execute_script("arguments[0].scrollIntoView();", ele)
+            # 向上滑动一段距离，防止找不到元素
+            self.driver.execute_script("window.scrollBy(0, -100);")
         except:
             self.logger.exception(f'滑动屏幕到"{model}"元素可见，元素定位:{loc}')
             # 截图
             self.screenshot_img(f'滑动屏幕到"{model}"元素异常')
             raise
+
+    def execute_script(self, script, loc, model=None):
+        """
+        在指定的driver上执行JavaScript代码，并返回执行结果。
+        :param script: 要执行的JavaScript代码字符串
+        :param loc: 元素定位
+        :param model: 元素描述
+        :return: JavaScript代码执行结果
+        """
+        ele = self.find_element(loc, model)
+        try:
+            self.logger.info(f'执行脚本"{script}"，元素定位:{loc}')
+            self.driver.execute_script(script, ele)
+        except:
+            self.logger.exception(f'执行脚本"{script}"，元素定位:{loc}')
+            # 截图
+            self.screenshot_img(f'执行脚本"{script}"异常')
+            raise
+
+    def execute_sql_re_for_result(self, sql, re=None):
+        self.logger.info("执行sql查询数据库结果，并通过正则表达式获取指定数据")
+        try:
+            sql = f"{sql}"
+            # 通过正则获取指定结果
+            result = execute_sql(sql)
+            if re:
+                match = re.search(f"{re}", str(result))
+                if match:
+                    value = match.group(1)
+                    return value
+                else:
+                    self.logger.exception(f"未找到指定数据，请检查sql或连接是否正常，该sql为：{sql}")
+                    raise
+            else:
+                return result
+        except Exception as e:
+            self.logger.info(f"--未查询到id，报错信息：{e}--")

@@ -15,6 +15,10 @@ class GoldOrderDetailPageOperation(BasePage):
     def open_url(self, url):
         self.get_url(url)
 
+    def get_current_url(self):
+        link = self.get_current_link()
+        return link
+
     '------------------------------Gold & Rewards----------------------------------'
     def check_gold_rewards_title(self):
         self.logger.info("--进入Gold & Rewards Detail--")
@@ -101,6 +105,9 @@ class GoldOrderDetailPageOperation(BasePage):
     def input_appeal_event(self, issue):
         self.logger.info(f"输入Appeal Event内容:{issue}")
         pass
+        self.logger.info("发起金币申诉")
+        self.click_element(GoldOrderDetailElement.APPEAL_LINK, model='金币申诉')
+        self.implicitly_wait_second(10)
 
     def upload_order_img(self, img):
         self.logger.info(f"上传订单图片:{img}")
@@ -132,6 +139,9 @@ class GoldOrderDetailPageOperation(BasePage):
 
     def click_appeal_query(self):
         self.logger.info('点击query按钮')
+        self.click_element(GoldOrderDetailElement.APPEAL_QUERY_BUTTON, model='query按钮')
+        self.implicitly_wait_second(3)
+        self.logger.info('点击query按钮，查询筛选结果')
         self.click_element(GoldOrderDetailElement.APPEAL_QUERY_BUTTON, model='query按钮')
         self.implicitly_wait_second(3)
 

@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 
 
 class GoldOrderDetailElement:
+
     GOLD_REWARDS = (By.XPATH, '//*[@id="__next"]/main/div/div[2]/div/h1')
     CASH_BACK_GOLD = (By.XPATH, '//*[@id="rc-tabs-1-panel-gold_order"]/div[1]/div[1]/div[1]/span')
     CONFIRMED_GOLD = (By.XPATH, '//*[@id="rc-tabs-1-panel-gold_order"]/div[1]/div[1]/div[2]/div[1]')
@@ -12,6 +13,7 @@ class GoldOrderDetailElement:
     PENDING_TASK_GOLD = (By.XPATH, '//*[@id="rc-tabs-1-panel-gold_order"]/div[1]/div[2]/div[2]/div[2]')
 
     '--------------------------------Gold Detail--------------------------------'
+
     GOLD_DETAIL = (By.XPATH, '//*[@id="rc-tabs-1-panel-gold_order"]/div[2]/div[1]')
     GOLD_DETAIL_LINK = (By.XPATH, '//*[@id="rc-tabs-1-panel-gold_order"]/div[2]/div[1]/a')
     HELP_PAGE_TITLE = (By.XPATH, '//*[@id="post-379"]/footer[1]/h1')
@@ -27,10 +29,6 @@ class GoldOrderDetailElement:
                      '/html/body/div[1]/main/div/div[2]/div[2]/div/div[2]/div/div/div[2]/div[2]/div/div/div/div/div/table/tbody/tr[2]/td[8]/div/button')
     DETAIL_BOX_TEXT = (By.XPATH, "//div[@class='jsx-2717541934 rewards_operation_tips__z25vw']")
 
-    APPEAL_LINK = (By.XPATH,
-                   '//*[@id="rc-tabs-1-panel-gold_order"]/div[2]/div[2]/div/div/div/div/div/table/tbody/tr[2]/td[8]/div/div')
-    APPEAL_PAGE_TITLE = (By.XPATH, '//*[@id="__next"]/main/div/div[2]/div/h1')
-
     '--------------------------------Submit Appeal--------------------------------'
 
     SUBMIT_PAGE_TITLE = (By.XPATH, '//*[@id="__next"]/main/div/div[2]/div[2]/h1')
@@ -39,6 +37,9 @@ class GoldOrderDetailElement:
     ADD_IMG_UPLOAD = (By.XPATH, '//*[@id="SubmitAppeal_photoNames"]')
     COMMENTS_TEXTAREA = (By.XPATH, '//*[@id="SubmitAppeal_comment"]')
     SUBMIT_BUTTON = (By.XPATH, '//*[@id="SubmitAppeal"]/div[6]/div/div/div/div/button')
+    APPEAL_LINK = (By.XPATH,
+                   '//*[@id="rc-tabs-1-panel-gold_order"]/div[2]/div[2]/div/div/div/div/div/table/tbody/tr[2]/td[8]/div/div')
+    APPEAL_PAGE_TITLE = (By.XPATH, '//*[@id="__next"]/main/div/div[2]/div/h1')
 
     '--------------------------------Appeal List--------------------------------'
 

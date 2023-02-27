@@ -29,7 +29,7 @@ class FindMyMissingCashBackPageOperation(BasePage):
                              model="My Missing Cash Back页面title")
         return text
 
-    def check_mmcb_decscription(self):
+    def check_mmcb_description(self):
         self.logger.info("检查My Missing Cash Back模块描述")
         text = self.get_text(FindMyMissingCashBackElement.MMCB_DESC, model="My Missing Cash Back模块描述")
         return text
@@ -58,7 +58,6 @@ class FindMyMissingCashBackPageOperation(BasePage):
     def input_order_date(self, date):
         self.logger.info(f"输入Order Date：{date}")
         date_picker = self.input_text(FindMyMissingCashBackElement.MCB_ORDER_DATE_INPUT, date, model="Order Date输入框")
-        date = timeoperator.now2
         script = f"arguments[0].value='{date}';"
         self.execute_script(script, date_picker)
 
@@ -89,10 +88,11 @@ class FindMyMissingCashBackPageOperation(BasePage):
 
     def get_mcb_record_id(self):
         self.logger.info("获取mcb提交记录ID")
-        sql = f"SELECT id from user_missing_cashback_record where user_email = '{Email}' ORDER BY submit_time Desc LIMIT 1;"
-        re_path = f"'id':\s*(\d+)"
-        res = self.execute_sql_re_for_result(sql, re_path)
-        return res
+        sql = f"SELECT * from user_missing_cashback_record where user_email = '{Email}' ORDER BY submit_time Desc LIMIT 1;"
+        res = self.execute_sql_re_for_result(sql)
+        re_id = res[0]['id']
+        re_date = res[0]['order_time']
+        return re_id, re_date
 
     def check_mcb_record_status(self):
         self.logger.info("检查missing cash back提交状态")

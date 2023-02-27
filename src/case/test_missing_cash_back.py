@@ -1,3 +1,4 @@
+import os
 import time
 import pytest
 import allure
@@ -51,7 +52,7 @@ class TestFindMyMissingCashBack:
             self.missing_cashback.input_order_date(date)
             self.missing_cashback.input_order_number('123456789')
             self.missing_cashback.input_order_subtotal('10')
-            self.missing_cashback.input_img_path(IMG_PATH + '/Paypal.png')
+            self.missing_cashback.input_img_path(os.path.join(IMG_PATH, '/Paypal.png'))
             self.missing_cashback.input_comments('test message')
         with allure.step('点击提交按钮，并获取记录id'):
             self.missing_cashback.click_fmcb_button()

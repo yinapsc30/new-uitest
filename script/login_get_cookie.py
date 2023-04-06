@@ -10,9 +10,7 @@ login_api = 'https://dev.coupert.com/api/v3/user/signin'
 # 模拟登录，发送 POST 请求
 datas = {
     "email": "yinapsc30@gmail.com",
-    "password": "123456",
-    "code": "123123123",
-    "token": "suchot"
+    "password": "",
 }
 
 headers = {

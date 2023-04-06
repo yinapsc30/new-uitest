@@ -50,17 +50,6 @@ class Database:
         # 关闭SSH隧道
         self.server.stop()
 
-
-ssh_host = '44.242.9.67'
-ssh_user = 'suchotsu'
-ssh_password = '3b82ed78B4C947369d!!!'
-
-database_host = '172.16.13.96'
-database_user = 'coupert'
-database_password = '5fToKatrb+Y'
-database_name = 'coupert_base'
-
-
 def execute_sql(sql):
     # 执行SQL语句，获取查询结果
     with Database(
@@ -76,13 +65,3 @@ def execute_sql(sql):
         cursor.execute(sql)
         result = cursor.fetchall()
         return result
-
-
-if __name__ == '__main__':
-    # sql = "SELECT code FROM user_verification_code where type='withdraw' and user_id=5231600;"
-    # sql = "SELECT code FROM user_verification_code where type='withdraw' and email='yinapsc30@gmail.com';"
-    sql = "SELECT * from user_missing_cashback_record where user_email ='yinapsc30@gmail.com' ORDER BY submit_time Desc LIMIT 1;"
-    result = execute_sql(sql)
-    print(result[0])
-    print(type(result[0]))
-

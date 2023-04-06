@@ -11,7 +11,6 @@ login_api = 'https://dev.coupert.com/api/v3/user/signin'
 datas = {
     "email": "yinapsc30@gmail.com",
     "password": "",
-
 }
 
 headers = {

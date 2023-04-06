@@ -7,6 +7,7 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver import DesiredCapabilities
 
+from config.config_init import Email,PassWord
 # from src.pages.HomePage import HomePage
 from src.utils.allureoperator import attach_png
 from src.utils.constant import TEST_PIC
@@ -181,10 +182,8 @@ def hand_driver(drivers):
     login = LoginPageOperation(hand_driver)
     with allure.step(f"手动验证登录开始！"):
         withdraw.open_url(r'https://www.coupert.com/user/login')
-        email = 'burtontest@test.com'
-        password = 123456
-        login.input_email(email)
-        login.input_password(password)
+        login.input_email(Email)
+        login.input_password(PassWord)
         login.visible_account_email()
         time.sleep(5)
     yield hand_driver

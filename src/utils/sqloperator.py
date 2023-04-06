@@ -1,3 +1,5 @@
+import re
+
 import pymysql
 from sshtunnel import SSHTunnelForwarder
 

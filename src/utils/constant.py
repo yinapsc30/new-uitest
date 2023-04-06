@@ -16,9 +16,7 @@ BASE_PATH = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fi
 DATA_PATH = os.path.join(BASE_PATH, 'data')
 SRC_PATH = os.path.join(BASE_PATH, 'src')
 TOOL_PATH = os.path.join(SRC_PATH, 'tools')
-# ALLURE_TOOL_PATH = os.path.join(TOOL_PATH, 'allure-2.14.0/bin')
-# debug暂时写死，后续做成动态获取
-ALLURE_TOOL_PATH = '/Users/soar/Downloads/allure-2.19.0/bin'
+ALLURE_TOOL_PATH = os.path.join(TOOL_PATH, '/allure-2.19.0/bin')
 
 LOG_PATH = os.path.join(BASE_PATH, 'log')
 REPORT_PATH = os.path.join(BASE_PATH, 'report')

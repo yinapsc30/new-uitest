@@ -162,6 +162,20 @@ class BasePage(object):
             self.screenshot_img(f"[{model}]操作异常")
             raise
 
+    # 上传操作
+    def upload_file(self, loc, path, model=None):
+        # 查找元素
+        ele = self.find_element(loc, model)
+        # 输入操作
+        self.logger.info(f'在"{model}"上传文件："{path}",元素定位:{loc}')
+        try:
+            ele.send_keys(path)
+        except:
+            self.logger.exception(f'"{model}上传操作失败!')
+            # 截图
+            self.save_webImgs(f"[{model}]操作异常")
+            raise
+
     # 清除操作
     def clean_input_text(self, loc, model=None):
         ele = self.find_element(loc, model)
